@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 
 from controllers import usuario_controller, cliente_controller, producto_controller, venta_controller
 
@@ -24,7 +24,7 @@ def inject_active_path():
 
 @app.route("/")
 def home():
-    return "<h1>Aplicación ventas</h1>"
+    return render_template("ventas/index.html")
 
 if __name__ == "__main__":
     with app.app_context():
